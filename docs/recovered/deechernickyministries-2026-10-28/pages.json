@@ -1,0 +1,32 @@
+{
+ "home": {
+  "archiveUrl": "https://web.archive.org/web/20191019042730id_/https://www.deechernickyministries.org/",
+  "iframes": [
+   "https://www.youtube-nocookie.com/embed/sWu0MNOHAP0?controls=0&autoplay=0&playlist=0&loop=0&mute=0&wmode=transparent"
+  ]
+ },
+ "contact": {
+  "archiveUrl": "https://web.archive.org/web/20191112011918id_/https://deechernickyministries.org/contact",
+  "iframes": []
+ },
+ "radio-show": {
+  "archiveUrl": "https://web.archive.org/web/20191112011859id_/https://deechernickyministries.org/radio-show",
+  "iframes": []
+ },
+ "gallery": {
+  "archiveUrl": "https://web.archive.org/web/20191112015154id_/https://deechernickyministries.org/gallery",
+  "iframes": [
+   "https://www.youtube-nocookie.com/embed/sWu0MNOHAP0?controls=0&autoplay=0&playlist=0&loop=0&mute=0&wmode=transparent"
+  ]
+ },
+ "about": {
+  "archiveUrl": "https://web.archive.org/web/20191112011837id_/https://deechernickyministries.org/about",
+  "iframes": [
+   "https://www.youtube-nocookie.com/embed/m3DF1Ivxwqg?controls=1&autoplay=0&playlist=0&loop=0&mute=0&wmode=transparent"
+  ]
+ },
+ "christmas-celebration": {
+  "archiveUrl": "https://web.archive.org/web/20191112011912id_/https://deechernickyministries.org/christmas-celebration",
+  "iframes": []
+ }
+}

@@ -1,0 +1,202 @@
+{
+  "dee-portrait": {
+    "src": "/photos/dee-portrait.jpg",
+    "width": 551,
+    "height": 683
+  },
+  "dee-headshot": {
+    "src": "/photos/dee-headshot.jpg",
+    "width": 442,
+    "height": 442
+  },
+  "valerie-headshot": {
+    "src": "/photos/valerie-headshot.jpg",
+    "width": 339,
+    "height": 339
+  },
+  "dee-worship": {
+    "src": "/photos/dee-worship.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "dee-stage-praise": {
+    "src": "/photos/dee-stage-praise.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "dee-podium": {
+    "src": "/photos/dee-podium.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "dee-with-guest": {
+    "src": "/photos/dee-with-guest.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "radio-studio-dee": {
+    "src": "/photos/radio-studio-dee.jpg",
+    "width": 839,
+    "height": 839
+  },
+  "radio-studio-hosts": {
+    "src": "/photos/radio-studio-hosts.jpg",
+    "width": 506,
+    "height": 337
+  },
+  "prayer-embrace": {
+    "src": "/photos/prayer-embrace.jpg",
+    "width": 575,
+    "height": 575
+  },
+  "shine-on-ballroom": {
+    "src": "/photos/shine-on-ballroom.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "outreach-prison-talk": {
+    "src": "/photos/outreach-prison-talk.jpg",
+    "width": 875,
+    "height": 875
+  },
+  "outreach-prison-worship": {
+    "src": "/photos/outreach-prison-worship.jpg",
+    "width": 1081,
+    "height": 1081
+  },
+  "outreach-prison-crowd": {
+    "src": "/photos/outreach-prison-crowd.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "prayer-ministry": {
+    "src": "/photos/prayer-ministry.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "shine-on-collage": {
+    "src": "/photos/shine-on-collage.jpg",
+    "width": 629,
+    "height": 629
+  },
+  "worship-guitar": {
+    "src": "/photos/worship-guitar.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "speaker-emerald-coast": {
+    "src": "/photos/speaker-emerald-coast.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "speaker-pink": {
+    "src": "/photos/speaker-pink.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "speaker-book": {
+    "src": "/photos/speaker-book.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "worship-shofar": {
+    "src": "/photos/worship-shofar.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "friends-hug": {
+    "src": "/photos/friends-hug.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "prayer-circle": {
+    "src": "/photos/prayer-circle.jpg",
+    "width": 764,
+    "height": 764
+  },
+  "speaker-denim": {
+    "src": "/photos/speaker-denim.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "shine-on-team": {
+    "src": "/photos/shine-on-team.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "friends-group": {
+    "src": "/photos/friends-group.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "stage-duo": {
+    "src": "/photos/stage-duo.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "mother-daughter": {
+    "src": "/photos/mother-daughter.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "friends-seated": {
+    "src": "/photos/friends-seated.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "vendor-table": {
+    "src": "/photos/vendor-table.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "shine-on-teens": {
+    "src": "/photos/shine-on-teens.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "speaker-podium": {
+    "src": "/photos/speaker-podium.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "friends-trio": {
+    "src": "/photos/friends-trio.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "altar-prayer": {
+    "src": "/photos/altar-prayer.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "praise-hand": {
+    "src": "/photos/praise-hand.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "worship-singing": {
+    "src": "/photos/worship-singing.jpg",
+    "width": 859,
+    "height": 859
+  },
+  "worship-team": {
+    "src": "/photos/worship-team.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "cross-thorns": {
+    "src": "/photos/cross-thorns.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "friends-laugh": {
+    "src": "/photos/friends-laugh.jpg",
+    "width": 1100,
+    "height": 1100
+  },
+  "worship-solo": {
+    "src": "/photos/worship-solo.jpg",
+    "width": 1032,
+    "height": 1032
+  }
+}
