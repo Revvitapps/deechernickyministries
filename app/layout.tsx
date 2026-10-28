@@ -2,14 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 import { Pwa } from "@/components/pwa";
 import { ministry } from "@/data/ministry";
 import { siteUrl } from "@/lib/site";
 import { indexingEnabled, pages, siteJsonLd } from "@/lib/seo";
 
-// Faces from the coming-soon draft. The 2019 Vistaprint theme used Carter One, Great Vibes and Lora.
+// Faces from Matthew's coming-soon draft.
 const display = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600"], style: ["normal", "italic"], variable: "--font-display", display: "swap" });
 const body = Jost({ subsets: ["latin"], weight: ["300", "400", "500"], variable: "--font-body", display: "swap" });
 
@@ -40,11 +38,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
-        <a href="#main" className="skip-link">Skip to content</a>
         <Pwa />
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
+        {children}
         <Analytics />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd()) }} />
       </body>

@@ -18,7 +18,7 @@ try {
     assert.match(html, /property="og:image"/, `${path} og:image`);
   }
   const sitemap = await (await fetch(base + "/sitemap.xml")).text();
-  assert.ok(sitemap.includes("<loc>") && !sitemap.includes("/audit"), "sitemap lists the page, not the audit");
+  assert.ok(sitemap.includes("<loc>"), "sitemap lists the page");
   console.log(`PASS seo: ${routes.length} unique titles, descriptions, canonicals, noindex until SITE_INDEXING=on.`);
 } finally {
   stop();

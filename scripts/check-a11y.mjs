@@ -15,7 +15,7 @@ const lum = (hex) => {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 };
 const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
-const pairs = [["ink", "night"], ["muted", "night"], ["muted", "night-2"], ["ember", "night"], ["ember-2", "night"], ["ember-2", "night-2"], ["night", "ember"], ["paper-ink", "paper"], ["paper-muted", "paper"], ["ember-deep", "paper"], ["paper", "ember-deep"], ["night", "ink"]];
+const pairs = [["ink", "night"], ["muted", "night"], ["muted", "night-2"], ["ember", "night"], ["ember-2", "night"], ["ember-2", "night-2"], ["night", "ember"]];
 const rows = pairs.map(([fg, bg]) => { const r = ratio(token(fg), token(bg)); assert.ok(r >= 4.5, `${fg} on ${bg} is ${r.toFixed(2)}:1`); return `${fg}/${bg} ${r.toFixed(1)}`; });
 
 // --- axe ---

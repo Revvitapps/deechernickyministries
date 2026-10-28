@@ -2,15 +2,15 @@ import type { NextConfig } from "next";
 
 // Every public path on the old Vistaprint site (deechernickyministries.org,
 // also served as christmascelebrationdinner.org), recovered 2026-10-28,
-// lands on its section of the one-page site.
+// lands on the coming-soon page until the full site launches.
 const legacyRedirects = [
   { source: "/home", destination: "/" },
-  { source: "/about", destination: "/#about" },
-  { source: "/radio-show", destination: "/#radio" },
-  { source: "/contact", destination: "/#contact" },
-  { source: "/gallery", destination: "/#outreach" },
-  { source: "/christmas-celebration", destination: "/#events" },
-  { source: "/shine-on-conference", destination: "/#events" },
+  { source: "/about", destination: "/" },
+  { source: "/radio-show", destination: "/" },
+  { source: "/contact", destination: "/" },
+  { source: "/gallery", destination: "/" },
+  { source: "/christmas-celebration", destination: "/" },
+  { source: "/shine-on-conference", destination: "/" },
 ];
 
 const securityHeaders = [

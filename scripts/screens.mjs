@@ -12,7 +12,7 @@ const { chromium } = require("playwright");
 
 const port = process.env.CHECK_PORT ?? "3998";
 const base = `http://127.0.0.1:${port}`;
-const routes = ["/", "/audit"];
+const routes = ["/"];
 const viewports = { phone: { width: 390, height: 844 }, desktop: { width: 1440, height: 900 } };
 
 const server = spawn("node", ["node_modules/next/dist/bin/next", "start", "-p", port], { stdio: "ignore" });
@@ -38,7 +38,6 @@ for (const [label, viewport] of Object.entries(viewports)) {
     await page.waitForTimeout(300);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     if (overflow > 0) problems.push(`${label} ${route}: horizontal overflow ${overflow}px`);
-    if (!(await page.locator("header.topbar").isVisible())) problems.push(`${label} ${route}: header missing`);
     const name = route === "/" ? "home" : route.slice(1).replaceAll("/", "-");
     await page.screenshot({ path: `.cache/screens/${label}-${name}.png`, fullPage: true });
   }
@@ -54,8 +53,8 @@ await page.reload({ waitUntil: "networkidle" });
 await context.setOffline(true);
 await page.goto(base + "/").catch(() => {});
 const homeHtml = await page.content();
-if (!homeHtml.includes("Today’s confession")) problems.push("offline: / did not load from cache: " + homeHtml.slice(0, 200));
-await page.goto(base + "/audit").catch(() => {});
+if (!homeHtml.includes("coming soon")) problems.push("offline: / did not load from cache: " + homeHtml.slice(0, 200));
+await page.goto(base + "/never-visited").catch(() => {});
 if (!(await page.content()).includes("offline")) problems.push("offline: unvisited page did not get the offline page");
 await page.screenshot({ path: ".cache/screens/phone-offline.png" });
 await browser.close();
@@ -65,4 +64,4 @@ if (problems.length) {
   console.error("FAIL screens:\n" + problems.join("\n"));
   process.exit(1);
 }
-console.log(`PASS screens: ${routes.length} routes x 2 viewports, no overflow, sticky header, offline fallback works. See .cache/screens/.`);
+console.log(`PASS screens: ${routes.length} routes x 2 viewports, no overflow, offline fallback works. See .cache/screens/.`);

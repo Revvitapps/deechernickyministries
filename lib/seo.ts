@@ -10,20 +10,19 @@ export const indexingEnabled = () => process.env.SITE_INDEXING === "on";
 
 export const absoluteUrl = (path: string) => siteUrl + (path.startsWith("/") ? path : `/${path}`);
 
-export type PageKey = "home" | "audit";
+export type PageKey = "home";
 
 type PageSeo = { path: string; title: string; description: string; priority: number };
 
 export const pages: Record<PageKey, PageSeo> = {
-  home: { path: "/", title: `${ministry.name} | Destin, Florida`, description: "Dee Chernicky Ministries, Destin, Florida: Life Issues, Real Answers radio, the Shine On Women's Conference, prison and shelter outreach, and the Word for every need.", priority: 1 },
-  audit: { path: "/audit", title: "Website review", description: "What the old site lost and what the new app changes.", priority: 0 },
+  home: { path: "/", title: `${ministry.name} | Destin, Florida`, description: "Dee Chernicky Ministries, Destin, Florida. Ignite a fire for God's presence and His Word. Our new home is coming soon.", priority: 1 },
 };
 
 export function pageMetadata(key: PageKey): Metadata {
   const p = pages[key];
   const home = key === "home";
   const image = { url: "/og-default.png", width: 1200, height: 630, alt: ministry.name };
-  const index = indexingEnabled() && key !== "audit";
+  const index = indexingEnabled();
   return {
     title: home ? { absolute: p.title } : p.title,
     description: p.description,

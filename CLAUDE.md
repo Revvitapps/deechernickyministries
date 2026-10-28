@@ -4,6 +4,8 @@
 
 ## 0. Status and decisions (living: update this first)
 
+- **2026-10-28 (latest)** Matthew: what's wanted now is a **simple coming-soon page** saying the ministry will be up and running soon, as in his draft. `main` = that page. The one-page site moved to `site-full`; the app stays on `pwa-full`. Repo: Revvitapps/deechernickyministries.
+
 - **2026-10-28** Matthew: this is a **single-page landing page to be ready for January 1**, not a multi-screen app yet. Everything is now one page at `/` with section anchors; the multi-screen PWA (tab bar, Give orb, Ask helper, install prompt, per-topic routes) is saved on the `pwa-full` branch for the app phase. Manifest, service worker and offline page stay on main.
 
 - **2026-10-28** Built from the Wayback recovery of deechernickyministries.org (2019) and Matthew's coming-soon draft (`docs/recovered/deechernickyministries-2026-10-28/`). The draft's palette and fonts (night navy, ember gold, Cormorant Garamond + Jost) are the brand, not the 2019 Vistaprint theme.
