@@ -194,7 +194,7 @@ p { margin: 0; }
 .pill { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; padding: 6px 12px; border-radius: 999px; font-size: 0.8rem; background: rgba(227, 160, 79, 0.1); border: 1px solid rgba(243, 199, 132, 0.3); color: var(--ember-2); }
 .paper .pill { background: rgba(138, 84, 20, 0.08); border-color: rgba(138, 84, 20, 0.3); color: var(--ember-deep); }
 
-.placeholder { display: inline-block; padding: 2px 8px; border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(227, 160, 79, 0.16) 0 6px, rgba(227, 160, 79, 0.06) 6px 12px); border: 1px dashed rgba(243, 199, 132, 0.6); color: var(--ember-2); font-size: 0.85em; font-weight: 400; font-style: normal; font-family: var(--font-body), system-ui, sans-serif; letter-spacing: 0; text-transform: none; }
+.placeholder { display: inline; -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 1px 6px; border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(227, 160, 79, 0.16) 0 6px, rgba(227, 160, 79, 0.06) 6px 12px); border: 1px dashed rgba(243, 199, 132, 0.6); color: var(--ember-2); font-size: 0.85em; font-weight: 400; font-style: normal; font-family: var(--font-body), system-ui, sans-serif; letter-spacing: 0; text-transform: none; }
 .paper .placeholder { color: var(--ember-deep); border-color: rgba(138, 84, 20, 0.6); background: rgba(138, 84, 20, 0.07); }
 .sample { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
 .paper .sample { color: var(--paper-muted); }
