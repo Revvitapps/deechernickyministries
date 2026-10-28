@@ -5,9 +5,6 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Pwa } from "@/components/pwa";
-import { TabBar } from "@/components/tab-bar";
-import { InstallPrompt } from "@/components/install-prompt";
-import { AskDrawer } from "@/components/ask";
 import { ministry } from "@/data/ministry";
 import { siteUrl } from "@/lib/site";
 import { indexingEnabled, pages, siteJsonLd } from "@/lib/seo";
@@ -48,9 +45,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
-        <TabBar />
-        <InstallPrompt />
-        <AskDrawer />
         <Analytics />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd()) }} />
       </body>

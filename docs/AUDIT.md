@@ -4,7 +4,7 @@
 
 ## The short version
 
-The old site said the right things, but it could not take a gift, a prayer request or a registration, and it gave people no reason to come back between events. The new app keeps your words, your photos and your voice, and turns each visit into something a person can *do*: pray, give, save a seat, hear Friday's show, or read today's confession.
+The old site said the right things, but it could not take a gift, a prayer request or a registration, and it gave people no reason to come back between events. The new site, launching January 1, keeps your words, your photos and your voice on one clear page, and turns each visit into something a person can *do*: pray, give, save a seat, hear Friday's show, or read today's confession.
 
 ## What the old site was losing
 
@@ -16,30 +16,24 @@ The old site said the right things, but it could not take a gift, a prayer reque
 6. **Nothing to bring people back.** Your Daily Confessions were one of the best things on the site, buried at the bottom of the radio page.
 7. **Small things that add up.** "Complementary tickets" (complimentary), "it's solution", "Photo's"; no image descriptions for screen readers on any photo; two different email addresses (deechernicky@aol.com on the site, a Gmail address on the new draft).
 
-## Today vs. the new app
+## Today vs. the new site
 
-| Someone wants to… | On the old site | In the new app | Try it |
+| Someone wants to… | On the old site | On the new site | Try it |
 |---|---|---|---|
-| Give | Find the P.O. box in the footer, write a check | Tap the glowing **Give** button on every screen, choose an amount and where it goes | [Try it](/give) |
-| Ask for prayer | A generic contact form | A dedicated prayer request, private to the team or to Dee | [Try it](/prayer) |
-| Hear the radio show | Read a 2019 schedule | One tap to WPSM, plus Friday reminders and a way to send a question for the show | [Try it](/radio) |
-| Come to Christmas dinner | Leave the site for Eventbrite | Save seats in the app; groups and shelters flagged for the office | [Try it](/events/christmas) |
-| Get to Shine On | Leave for another website | Save a seat and hear first when registration opens | [Try it](/events/shine-on) |
-| Hear from God today | Scroll to the bottom of the radio page | Today's confession on the home screen, a new one each day, even offline | [Try it](/today) |
-| Get a quick answer | Call or email | The **Ask** button answers the common questions and hands anything personal to a person | Tap **Ask** at the top |
-| Book Dee to speak | Contact form | A booking request that goes to Dee's assistant | [Try it](/contact?topic=speaking) |
+| Give | Find the P.O. box in the footer, write a check | A **Give** button in the header on every scroll, pledge an amount and choose where it goes | [Try it](/#give) |
+| Ask for prayer | A generic contact form | A dedicated prayer request, with an option to be called | [Try it](/#prayer) |
+| Hear the radio show | Read a 2019 schedule | Show times, hosts and one tap to WPSM | [Try it](/#radio) |
+| Come to Christmas dinner or Shine On | Leave for Eventbrite or another website | Save seats right on the page and hear first when dates are set | [Try it](/#events) |
+| Hear from God today | Scroll to the bottom of the radio page | Today's confession near the top, a new one each day | [Try it](/#today) |
+| Book Dee to speak | Contact form | A booking topic that goes to Dee's assistant | [Try it](/#contact) |
 
-Everyone who prays, gives, saves a seat or asks a question lands in one list for the office, so nobody falls through the cracks.
-
-## Why an app, not just a website
-
-People can add it to their home screen in two taps. It opens like an app, works without signal, and puts today's confession, Friday's show and the Give button one tap away. No app store, no download fees.
+Everyone who prays, gives, saves a seat or sends a message lands in one list for the office, so nobody falls through the cracks.
 
 ## Phasing
 
-1. **Now: prototype.** Your words, photos and voice, rebuilt. Private, not on Google yet.
-2. **Launch (once we have your answers below).** Online giving switched on, requests delivered to your inbox, current dates filled in, your domain pointed at the new site, old links redirected so nothing breaks.
-3. **Next.** Past radio shows to listen to in the app, Friday reminders by text, Christmas and Shine On registration with confirmations, and a simple way for your team to update events and confessions.
+1. **Now: preview.** Your words, photos and voice on one page. Private, not on Google yet.
+2. **January 1: launch.** Your answers below filled in, online giving switched on, requests delivered to your inbox, your domain pointed at the new site, and old links redirected so nothing breaks.
+3. **Later in 2026: the app.** The same site becomes installable on phones: daily confessions on the home screen, Friday radio reminders, past shows to listen to, and event registration with confirmations.
 
 ## What we need from you
 

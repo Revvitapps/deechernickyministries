@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { upsertContact, validateLead, type LeadKind } from "@/lib/pipeline";
 import { ministry } from "@/data/ministry";
-import { KEY_ACTION_EVENT } from "./install-prompt";
 
 type Extra =
   | { type: "textarea"; name: string; label: string; required?: boolean; placeholder?: string }
@@ -68,7 +67,6 @@ export function LeadForm({
     const result = await upsertContact(input);
     setDelivered(result.delivered);
     setState("done");
-    window.dispatchEvent(new Event(KEY_ACTION_EVENT));
   }
 
   if (state === "done") {

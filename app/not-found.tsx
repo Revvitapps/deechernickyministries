@@ -9,7 +9,7 @@ export default function NotFound() {
         <p className="lede measure">The ministry has a new home. Everything from the old site is here.</p>
         <div className="btn-row" style={{ marginTop: 28 }}>
           <Link href="/" className="btn btn-primary">Go home</Link>
-          <Link href="/prayer" className="btn btn-ghost">Send a prayer request</Link>
+          <Link href="/#prayer" className="btn btn-ghost">Send a prayer request</Link>
         </div>
       </div>
     </section>

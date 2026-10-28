@@ -12,9 +12,8 @@ const { chromium } = require("playwright");
 
 const port = process.env.CHECK_PORT ?? "3998";
 const base = `http://127.0.0.1:${port}`;
-const routes = ["/", "/radio", "/give", "/events", "/events/shine-on", "/events/christmas", "/book", "/about", "/gallery", "/contact", "/prayer", "/today", "/audit"];
+const routes = ["/", "/audit"];
 const viewports = { phone: { width: 390, height: 844 }, desktop: { width: 1440, height: 900 } };
-const full = process.argv.includes("--full");
 
 const server = spawn("node", ["node_modules/next/dist/bin/next", "start", "-p", port], { stdio: "ignore" });
 const stop = () => server.kill("SIGTERM");
@@ -39,9 +38,9 @@ for (const [label, viewport] of Object.entries(viewports)) {
     await page.waitForTimeout(300);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     if (overflow > 0) problems.push(`${label} ${route}: horizontal overflow ${overflow}px`);
-    if (!(await page.locator("nav.tab-bar").isVisible())) problems.push(`${label} ${route}: tab bar missing`);
+    if (!(await page.locator("header.topbar").isVisible())) problems.push(`${label} ${route}: header missing`);
     const name = route === "/" ? "home" : route.slice(1).replaceAll("/", "-");
-    await page.screenshot({ path: `.cache/screens/${label}-${name}.png`, fullPage: full || route === "/" });
+    await page.screenshot({ path: `.cache/screens/${label}-${name}.png`, fullPage: true });
   }
   await context.close();
 }
@@ -52,12 +51,11 @@ const page = await context.newPage();
 await page.goto(base + "/", { waitUntil: "networkidle" });
 await page.evaluate(() => navigator.serviceWorker.ready);
 await page.reload({ waitUntil: "networkidle" });
-await page.goto(base + "/gallery", { waitUntil: "networkidle" });
 await context.setOffline(true);
-await page.goto(base + "/today").catch(() => {});
-const todayHtml = await page.content();
-if (!todayHtml.includes("Daily Confessions")) problems.push("offline: /today did not load from cache: " + todayHtml.slice(0, 200));
-await page.goto(base + "/book").catch(() => {});
+await page.goto(base + "/").catch(() => {});
+const homeHtml = await page.content();
+if (!homeHtml.includes("Today’s confession")) problems.push("offline: / did not load from cache: " + homeHtml.slice(0, 200));
+await page.goto(base + "/audit").catch(() => {});
 if (!(await page.content()).includes("offline")) problems.push("offline: unvisited page did not get the offline page");
 await page.screenshot({ path: ".cache/screens/phone-offline.png" });
 await browser.close();
@@ -67,4 +65,4 @@ if (problems.length) {
   console.error("FAIL screens:\n" + problems.join("\n"));
   process.exit(1);
 }
-console.log(`PASS screens: ${routes.length} routes x 2 viewports, no overflow, tab bar on every screen, offline fallback works. See .cache/screens/.`);
+console.log(`PASS screens: ${routes.length} routes x 2 viewports, no overflow, sticky header, offline fallback works. See .cache/screens/.`);

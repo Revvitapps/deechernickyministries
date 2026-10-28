@@ -19,4 +19,5 @@ export async function serve(port = process.env.CHECK_PORT ?? "3999") {
   throw new Error("Server did not start:\n" + log);
 }
 
-export const routes = ["/", "/radio", "/give", "/events", "/events/shine-on", "/events/christmas", "/book", "/about", "/gallery", "/contact", "/prayer", "/today", "/audit"];
+export const routes = ["/", "/audit"];
+export const sections = ["top", "today", "about", "outreach", "radio", "events", "book", "give", "prayer", "contact"];

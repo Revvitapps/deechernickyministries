@@ -14,7 +14,7 @@ export function Video({ id, title, poster }: { id: string; title: string; poster
     );
   }
   return (
-    <button type="button" className="video" onClick={() => setPlaying(true)} aria-label={`Play video: ${title}`}>
+    <button type="button" className="video" onClick={() => setPlaying(true)} aria-label={`Watch ${title}`}>
       <Photo name={poster} alt="" fill sizes="(max-width: 860px) 100vw, 60vw" />
       <span className="video-play"><span><Play size={18} aria-hidden="true" /> Watch</span></span>
       <span className="video-title">{title}</span>

@@ -14,10 +14,10 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#141a2e",
     theme_color: "#141a2e",
     shortcuts: [
-      { name: "Today's confession", short_name: "Today", url: "/today" },
-      { name: "Send a prayer request", short_name: "Prayer", url: "/prayer" },
-      { name: "Give", short_name: "Give", url: "/give" },
-      { name: "Life Issues, Real Answers", short_name: "Radio", url: "/radio" },
+      { name: "Today's confession", short_name: "Today", url: "/#today" },
+      { name: "Send a prayer request", short_name: "Prayer", url: "/#prayer" },
+      { name: "Give", short_name: "Give", url: "/#give" },
+      { name: "Life Issues, Real Answers", short_name: "Radio", url: "/#radio" },
     ],
     icons: [
       { src: "/pwa/icon-192.png", sizes: "192x192", type: "image/png" },

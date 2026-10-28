@@ -25,7 +25,7 @@ export function Pwa() {
   if (online) return null;
   return (
     <p className="offline-banner" role="status">
-      You’re offline. Today’s confession and pages you’ve visited still work. Requests you send will be kept on this phone.
+      You’re offline. This page still works; anything you send is kept on this device until you’re back online.
     </p>
   );
 }

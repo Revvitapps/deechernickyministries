@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { ministry } from "@/data/ministry";
+import { sections } from "./header";
 
 export function Footer() {
   return (
@@ -18,13 +18,10 @@ export function Footer() {
         </ul>
       </div>
       <div>
-        <p style={{ color: "var(--ink)", marginBottom: 6 }}>Explore</p>
+        <p style={{ color: "var(--ink)", marginBottom: 6 }}>On this page</p>
         <ul>
-          <li><Link href="/radio">Radio</Link></li>
-          <li><Link href="/events">Events</Link></li>
-          <li><Link href="/about">About Dee</Link></li>
-          <li><Link href="/gallery">Gallery</Link></li>
-          <li><Link href="/prayer">Prayer request</Link></li>
+          {sections.map((s) => <li key={s.id}><a href={`#${s.id}`}>{s.label}</a></li>)}
+          <li><a href="#give">Give</a></li>
         </ul>
       </div>
       <div className="credit">

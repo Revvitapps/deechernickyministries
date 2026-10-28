@@ -64,8 +64,8 @@ const nav = (path) => ({ request: { url: origin + path, method: "GET", mode: "na
 const get = (path, mode = "cors") => ({ request: { url: origin + path, method: "GET", mode } });
 
 await run("install", {});
-const pages = caches.get("dcm-pages-v1");
-for (const path of ["/", "/today", "/prayer", "/give", "/radio", "/offline.html"]) assert.ok(pages.store.has(origin + path), `install precaches ${path}`);
+const pages = caches.get("dcm-pages-v2");
+for (const path of ["/", "/offline.html"]) assert.ok(pages.store.has(origin + path), `install precaches ${path}`);
 
 await run("activate", {});
 assert.ok(!caches.has("dcm-static-v0"), "activate drops old caches");
@@ -78,20 +78,20 @@ assert.ok(pages.store.has(origin + "/events/shine-on"), "visited page cached");
 // Static assets are cache-first and bounded.
 for (let i = 0; i < 200; i++) await run("fetch", get(`/photos/${i}.jpg`));
 await run("fetch", get("/_next/static/chunks/app.js"));
-const statics = caches.get("dcm-static-v1");
+const statics = caches.get("dcm-static-v2");
 assert.equal(statics.store.size, 150, "static cache is bounded");
 
 // Offline: visited pages come from cache, unknown pages get the offline page.
 networkDown = true;
 assert.equal((await run("fetch", nav("/events/shine-on"))).body, "net:" + origin + "/events/shine-on");
-assert.equal((await run("fetch", nav("/today"))).body, "page:" + origin + "/today");
+assert.equal((await run("fetch", nav("/"))).body, "page:" + origin + "/");
 assert.equal((await run("fetch", nav("/never-visited"))).body, "page:" + origin + "/offline.html");
 networkDown = false;
 
 // Page cache is bounded but keeps the app shell.
 for (let i = 0; i < 60; i++) await run("fetch", nav(`/gallery?p=${i}`));
 assert.equal(pages.store.size, 40, "page cache is bounded");
-for (const path of ["/", "/today", "/prayer", "/give", "/radio", "/offline.html"]) assert.ok(pages.store.has(origin + path), `${path} survives trimming`);
+for (const path of ["/", "/offline.html"]) assert.ok(pages.store.has(origin + path), `${path} survives trimming`);
 
 // Non-GET, cross-origin and API requests are never intercepted.
 for (const request of [

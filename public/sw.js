@@ -1,16 +1,15 @@
 // Dee Chernicky Ministries service worker.
-//  - App shell (home, today's confession, prayer, give, radio, offline page)
-//    is precached at install, so the daily confession and the key actions
-//    open without signal.
+//  - The one-page site and the offline page are precached at install, so the
+//    page (with today's confession) opens without signal.
 //  - Page navigations are network-first; the last good copy of a page is
 //    served when offline, then the offline page.
 //  - Photos, icons and hashed build assets are cache-first, bounded.
 //  - API requests and anything that is not a GET are never touched.
-const VERSION = "v1";
+const VERSION = "v2";
 const STATIC_CACHE = `dcm-static-${VERSION}`;
 const PAGE_CACHE = `dcm-pages-${VERSION}`;
 const OFFLINE_PAGE = "/offline.html";
-const APP_SHELL = ["/", "/today", "/prayer", "/give", "/radio", OFFLINE_PAGE];
+const APP_SHELL = ["/", OFFLINE_PAGE];
 const MAX_STATIC = 150;
 const MAX_PAGES = 40;
 const STATIC_PATTERNS = [/^\/photos\//, /^\/brand\//, /^\/pwa\//, /^\/_next\/static\//, /^\/_next\/image/];

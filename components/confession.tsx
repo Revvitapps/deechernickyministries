@@ -1,6 +1,5 @@
 "use client";
 import { useSyncExternalStore } from "react";
-import Link from "next/link";
 import { Share2 } from "lucide-react";
 import { confessionFor, confessions } from "@/data/confessions";
 
@@ -8,13 +7,13 @@ const noop = () => () => {};
 // Server render uses the first confession; the client swaps in today's (local date).
 const useTodayIndex = () => useSyncExternalStore(noop, () => confessionFor(new Date()).index, () => 0);
 
-export function TodaysConfession({ full = false }: { full?: boolean }) {
+export function TodaysConfession() {
   const index = useTodayIndex();
   const c = confessions[index];
   const share = async () => {
     const text = `“${c.text}” ${c.ref}`;
     try {
-      if (navigator.share) await navigator.share({ title: "Today’s confession", text, url: location.origin + "/today" });
+      if (navigator.share) await navigator.share({ title: "Today’s confession", text, url: location.origin + "/#today" });
       else await navigator.clipboard.writeText(text);
     } catch {}
   };
@@ -29,13 +28,8 @@ export function TodaysConfession({ full = false }: { full?: boolean }) {
         <button type="button" className="btn btn-ghost" onClick={share}>
           <Share2 size={18} aria-hidden="true" /> Share it
         </button>
-        {full ? null : (
-          <Link href="/today" className="btn btn-ghost">
-            All {confessions.length} confessions
-          </Link>
-        )}
       </div>
-      <p className="small muted" style={{ marginTop: 18 }}>From Dee’s Daily Confessions. Say it out loud. A new one every day, even offline.</p>
+      <p className="small muted" style={{ marginTop: 18 }}>From Dee’s Daily Confessions. Say it out loud. A new one every day.</p>
     </section>
   );
 }

@@ -1,6 +1,6 @@
-# Dee Chernicky Ministries: PWA prototype
+# Dee Chernicky Ministries: one-page site (launching January 1)
 
-A concept prototype of the new site for Dee Chernicky Ministries (Destin, Florida), rebuilt by Revvit as an installable Next.js PWA. It keeps Dee's words, photos and voice from the old Vistaprint site (last captured 2019) and the coming-soon draft, and turns every visit into something a person can do: send a prayer request, pledge a gift, save a seat, get Friday radio reminders, or read today's confession, even offline. Prototype only: noindexed, no payments, requests go to a webhook when one is set.
+A one-page landing site for Dee Chernicky Ministries (Destin, Florida), to launch January 1, built by Revvit in Next.js with the PWA groundwork (manifest, service worker, offline page) already in place for the app phase later. It keeps Dee's words, photos and voice from the old Vistaprint site (last captured 2019) and Matthew's coming-soon draft, and lets a visitor pray, pledge a gift, save an event seat or message the office without leaving the page. Preview only until launch: noindexed, no payments, form submissions go to a webhook when one is set. The earlier multi-screen PWA build is kept on the `pwa-full` branch.
 
 ## Run
 
@@ -15,11 +15,11 @@ npm run build && npm run start
 Checks:
 
 ```sh
-npm run check          # typecheck + lint + service-worker + Ask-helper checks
-npm run check:routes   # boots the build, requests every route, nav links, PWA files, legacy redirects, pipeline API
+npm run check          # typecheck + lint + service-worker check
+npm run check:routes   # boots the build: both routes, every section anchor, PWA files, legacy redirects, pipeline API
 npm run check:seo      # unique titles, descriptions, canonicals, noindex before launch
 npm run check:a11y     # axe-core on every route + WCAG contrast of the brand tokens (needs Playwright)
-npm run screens        # screenshots every route at 390x844 and 1440x900, overflow + offline checks (needs Playwright)
+npm run screens        # full-page screenshots at 390x844 and 1440x900, overflow + offline checks (needs Playwright)
 ```
 
 ## Environment
@@ -52,34 +52,37 @@ Recovered 2026-10-28 into `docs/recovered/deechernickyministries-2026-10-28/` (W
 | Radio logo | `public/brand/life-issues-real-answers.jpg` | 2019 radio page |
 | Videos | YouTube `sWu0MNOHAP0` (The Heart of Dee Chernicky Ministries), `m3DF1Ivxwqg` (Outreaches) | 2019 home and about pages; click-to-load |
 
-## Screens
+## The page
 
-| Route | What it does |
+One route, `/`, in this order. The sticky header links to each section and keeps a **Give** button in view.
+
+| Section | Content |
 |---|---|
-| `/` | Mission headline, the one question "What do you need?" (7 answers, each to a concrete outcome), today's confession, outreach, radio, events, video, give |
-| `/give` | Centre orb. Pledge form (amount, once/monthly, designation via `?for=`), give-by-mail, 501(c)(3) note |
-| `/radio` | Life Issues, Real Answers: schedule, hosts, 2019 sample line-up, reminders + questions for the show |
-| `/events`, `/events/shine-on`, `/events/christmas` | Event pages with seat requests and "sponsor a guest" |
-| `/today` | Today's confession (rotates daily, works offline) and all 14 Daily Confessions |
-| `/prayer` | Prayer request, private to the team or to Dee, optional follow-up |
-| `/about`, `/book`, `/gallery`, `/contact` | Dee's bio, mission and vision, outreach video; book request; 28-photo gallery; office contact with topic (`?topic=speaking`) |
-| `/audit` | The client audit (`content/AUDIT.md`), with Try it links into the prototype |
-| Ask (top right, and More) | Scripted decision tree (`lib/ask.ts`); prayer, tax, hard times and booking go to a person |
+| `#top` | Mission headline, Dee's promise line, prayer and radio buttons, Ezekiel 34:16 |
+| `#today` | Today's confession: one of Dee's 14 Daily Confessions, rotating by date, with Share |
+| `#about` | Dee's bio, mission and vision |
+| `#outreach` | Prison and shelter outreach: video and photos |
+| `#radio` | Life Issues, Real Answers: time, station, live venue, archive, both hosts |
+| `#events` | Shine On and the Christmas Celebration Dinner, with one "save my seat" form |
+| `#book` | Activating the Promises of God |
+| `#give` | Give by mail, 501(c)(3) note, pledge form |
+| `#prayer` | Prayer request form |
+| `#contact` | Office, email, assistant, mailing address, message form |
 
-Tab bar on every size: Home · Radio · **Give** (raised ember orb) · Events · More.
+`/audit` is the client review (`content/AUDIT.md`), noindexed and not linked from the page. Old site paths 301 to their sections (`/radio-show` to `/#radio`, and so on).
 
 ## Real vs. stubbed
 
 - **Real:** all copy, names, phone, mailing address, assistant, verses, Daily Confessions, radio details, 2019 event details, photos and videos, all recovered from the client's own pages.
 - **Placeholder (visible in the UI):** next Shine On and Christmas dates, book price and cover, online giving processor. Radio schedule and live venue are labelled "as published in 2019".
 - **Sample (labelled):** giving amount chips, the 2019 radio line-up.
-- **Stubbed:** no payment processing. Every form calls `upsertContact()` (`lib/pipeline.ts`): a copy on the device plus `POST /api/pipeline`, which forwards to `PIPELINE_WEBHOOK_URL` or just logs. No email is sent.
+- **Stubbed:** no payment processing. The Ask helper, tab bar and install banner from the app build are not on this page; they live on `pwa-full`. Every form calls `upsertContact()` (`lib/pipeline.ts`): a copy on the device plus `POST /api/pipeline`, which forwards to `PIPELINE_WEBHOOK_URL` or just logs. No email is sent.
 
 ## Verified
 
-2026-10-28, production build, headless Chromium at 390x844 and 1440x900: typecheck, lint, build clean; `check:offline`, `check:ask`, `check:routes`, `check:seo`, `check:a11y` (0 serious/critical axe issues on 13 routes) pass; no horizontal overflow on any route; tab bar on every screen; offline fallback works after killing the network. Lighthouse mobile: home Performance 86 / Accessibility 100, `/radio` 92/100, `/today` 98/100 (SEO scores are low by design while noindexed).
+2026-10-28, production build, headless Chromium at 390x844 and 1440x900: typecheck, lint, build clean; `check:offline`, `check:routes`, `check:seo`, `check:a11y` (0 serious/critical axe issues) pass; no horizontal overflow; offline fallback works with the network cut. Lighthouse mobile on `/` (warm runs): Performance 89 to 96, Accessibility 100, Best Practices 96 (SEO is low by design while noindexed).
 
-## Launch (needs Matthew's go-ahead)
+## Launch, January 1 (needs Matthew's go-ahead)
 
 1. Answers to the open questions in `CLAUDE.md`; fill the placeholders in `data/ministry.ts`.
 2. Giving processor live on `/give`; `PIPELINE_WEBHOOK_URL` pointed at the office inbox or CRM.
