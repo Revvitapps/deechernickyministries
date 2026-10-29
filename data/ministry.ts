@@ -62,7 +62,7 @@ export const book = {
   pitch: "Dee teaches you how to unlock the power of the Bible and empower your life.",
   reach: "Used internationally and nationally, including in prisons and outreach homes for women.",
   price: PLACEHOLDER("book price"),
-  buyUrl: null as string | null, // where the book is sold today is unknown
+  buyUrl: "https://a.co/d/06iIQyk5", // Amazon, from Matthew 2026-10-29 (also at pastforward.org, ISBN 9798869014504)
 };
 
 export const radio = {

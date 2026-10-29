@@ -41,11 +41,13 @@ h1 em { font-style: italic; font-weight: 500; color: var(--ember-2); }
 .halo { position: absolute; inset: -18px; border-radius: 210px 210px 24px 24px; border: 1px solid rgba(243, 199, 132, 0.18); pointer-events: none; }
 .name { position: absolute; left: 50%; bottom: -18px; transform: translateX(-50%); white-space: nowrap; background: var(--night-2); border: 1px solid var(--line); padding: 8px 20px; border-radius: 999px; font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
 
-.pillars { width: min(560px, calc(100% - 48px)); margin: -24px auto 0; display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
-.pillar { background: var(--night-2); padding: 30px 28px; text-align: center; }
-.pillar span { font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ember-2); }
-.pillar h2 { font-family: var(--font-display), Georgia, serif; font-weight: 600; font-size: 1.55rem; margin: 8px 0 6px; line-height: 1.15; }
-.pillar p { color: var(--muted); font-size: 0.95rem; }
+.book { position: relative; width: min(860px, calc(100% - 48px)); margin: -24px auto 0; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; padding: 30px 40px 30px 56px; border-radius: 999px; border: 1px solid rgba(243, 199, 132, 0.4); background: radial-gradient(120% 160% at 0% 50%, rgba(227, 160, 79, 0.16), transparent 60%), var(--night-2); box-shadow: 0 0 0 8px rgba(243, 199, 132, 0.05), 0 24px 60px rgba(0, 0, 0, 0.35); }
+.book span { font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ember-2); }
+.book .book-lead { font-family: var(--font-display), Georgia, serif; font-style: italic; font-size: 1.2rem; color: var(--ink); margin-top: 6px; }
+.book h2 { font-family: var(--font-display), Georgia, serif; font-weight: 600; font-size: 1.75rem; margin: 2px 0 6px; line-height: 1.15; color: var(--ember-2); }
+.book p { color: var(--muted); font-size: 0.95rem; }
+.cta { display: inline-flex; align-items: center; min-height: 48px; padding: 12px 28px; white-space: nowrap; border-radius: 999px; background: var(--ember); color: var(--night); font-weight: 500; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
+.cta:hover { background: var(--ember-2); }
 
 footer { max-width: 1120px; margin: 0 auto; padding: 56px 24px 44px; display: flex; flex-wrap: wrap; gap: 20px 40px; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.92rem; }
 footer .brand { font-family: var(--font-display), Georgia, serif; font-size: 1.25rem; color: var(--ink); }
@@ -65,6 +67,6 @@ footer a:hover { color: var(--ember-2); }
   .hero { padding: 40px 16px 64px; }
   .wrap { grid-template-columns: 1fr; gap: 56px; }
   .portrait { order: -1; width: min(78%, 300px); }
-  .pillars { width: calc(100% - 32px); margin: 0 auto; }
+  .book { width: calc(100% - 32px); margin: 0 auto; grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 36px 24px; border-radius: 48px; gap: 22px; }
   footer { padding: 44px 16px 36px; flex-direction: column; align-items: flex-start; }
 }

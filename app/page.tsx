@@ -1,5 +1,5 @@
 import { Photo } from "@/components/photo";
-import { ministry } from "@/data/ministry";
+import { book, ministry } from "@/data/ministry";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata("home");
@@ -41,12 +41,16 @@ export default function ComingSoon() {
         </div>
       </section>
 
-      <section className="pillars" aria-label="Book">
-        <div className="pillar">
-          <span>Book</span>
+      <section className="book" aria-label="Dee's book">
+        <div className="book-text">
+          <span>While we get ready</span>
+          <p className="book-lead">You can also find Dee’s book here</p>
           <h2>Activating the Promises of God</h2>
           <p>Unlocking the power of the Bible, used in prisons and outreach homes for women.</p>
         </div>
+        <a className="cta" href={book.buyUrl} target="_blank" rel="noopener">
+          Get it on Amazon
+        </a>
       </section>
 
       <footer>
