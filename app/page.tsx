@@ -8,12 +8,8 @@ export const metadata = pageMetadata("home");
  * Coming-soon page for the January 1 launch, ported from Matthew's draft
  * (docs/recovered/deechernickyministries-2026-10-28/coming-soon.html). The
  * fuller one-page site is on the `site-full` branch, the app on `pwa-full`.
+ * Matthew (2026-10-29): show only the book for now, not radio or gatherings.
  */
-const pillars = [
-  { kicker: "Radio", title: "Life Issues, Real Answers", body: "Solving life's issues with the power of God's Word, with co-host Valerie Peterson." },
-  { kicker: "Book", title: "Activating the Promises of God", body: "Unlocking the power of the Bible, used in prisons and outreach homes for women." },
-  { kicker: "Gatherings", title: "Shine On Women's Conference", body: "An annual gathering to discover your destiny through the transforming Word of God." },
-];
 
 export default function ComingSoon() {
   return (
@@ -45,14 +41,12 @@ export default function ComingSoon() {
         </div>
       </section>
 
-      <section className="pillars" aria-label="Ministry">
-        {pillars.map((p) => (
-          <div className="pillar" key={p.title}>
-            <span>{p.kicker}</span>
-            <h2>{p.title}</h2>
-            <p>{p.body}</p>
-          </div>
-        ))}
+      <section className="pillars" aria-label="Book">
+        <div className="pillar">
+          <span>Book</span>
+          <h2>Activating the Promises of God</h2>
+          <p>Unlocking the power of the Bible, used in prisons and outreach homes for women.</p>
+        </div>
       </section>
 
       <footer>
