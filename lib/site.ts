@@ -1,12 +1,11 @@
 /**
- * Public origin used for absolute URLs in metadata and structured data.
- * Resolution order: NEXT_PUBLIC_SITE_URL (set this once a domain is decided),
- * then Vercel's production URL, then the current deployment URL, then localhost.
+ * The site's one canonical origin. Canonical tags, og:url, og:image, the
+ * Organization JSON-LD url, robots.txt and the sitemap all build from this.
+ * NEXT_PUBLIC_SITE_URL can override it (e.g. for a staging domain); otherwise
+ * every environment points at the production custom domain.
  */
-const configured =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL && `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`) ||
-  (process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`) ||
-  "http://localhost:3000";
+export const CANONICAL_SITE_URL = "https://www.deechernickyministries.org";
+
+const configured = process.env.NEXT_PUBLIC_SITE_URL || CANONICAL_SITE_URL;
 
 export const siteUrl = configured.replace(/\/$/, "");

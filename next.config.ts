@@ -13,6 +13,12 @@ const legacyRedirects = [
   { source: "/shine-on-conference", destination: "/" },
 ];
 
+// The project's production *.vercel.app alias must not serve a duplicate copy
+// of the site: it 308s to the canonical www domain, same path and query.
+// Other preview *.vercel.app hosts are left alone.
+const CANONICAL_ORIGIN = "https://www.deechernickyministries.org";
+const aliasHosts = ["deechernickyministries.vercel.app"];
+
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
@@ -41,7 +47,13 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    return legacyRedirects.map((r) => ({ ...r, permanent: true }));
+    const toCanonical = aliasHosts.map((host) => ({
+      source: "/:path*",
+      has: [{ type: "host" as const, value: host }],
+      destination: `${CANONICAL_ORIGIN}/:path*`,
+      permanent: true,
+    }));
+    return [...toCanonical, ...legacyRedirects.map((r) => ({ ...r, permanent: true }))];
   },
 };
 
